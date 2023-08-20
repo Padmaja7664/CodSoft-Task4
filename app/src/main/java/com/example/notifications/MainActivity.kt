@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity() {
         val secint=Intent(this,sec::class.java)
         val pendingIntent=PendingIntent.getActivity(this,0,secint ,PendingIntent.FLAG_UPDATE_CURRENT)
         val notification=NotificationCompat.Builder(this,CHANNEL_ID)
-            .setContentTitle("Hey Padmaja !!")
-            .setContentText("How was your day?" )
-            
+            .setContentTitle("CodSoft Task4")
+            .setContentText("This is Window Notification.")
             .setColor(Color.GREEN)
             .setSmallIcon(R.drawable.baseline_insert_emoticon_24)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)  //This provide the user to see notification without having to unlock their device.
             .setDefaults(Notification.DEFAULT_SOUND)
             .setContentIntent(pendingIntent)
             .build()
